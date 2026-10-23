@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+# Puerta de entrada de Trunomy OS: un comando por tarea, sin recordar scripts.
+#   ./trunomy up        comprueba, compila, firma y arranca en QEMU (lo que quieres la primera vez)
+#   ./trunomy build     compila, firma y escribe trunomy.img   (acepta --own-keys, --verbose)
+#   ./trunomy run       arranca trunomy.img en QEMU
+#   ./trunomy check     que le falta a esta maquina (herramientas, toolchain, claves, QEMU)
+#   ./trunomy test      pruebas unitarias en el host
+#   ./trunomy verify    prueba que el build es reproducible (dos clones limpios, mismo hash)
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
+usage() {
+    cat <<'EOF_USAGE'
+Trunomy OS entry point: one command per task, no scripts to remember.
+  ./trunomy up        check, build, sign and boot in QEMU (what you want the first time)
+  ./trunomy build     build, sign and write trunomy.img   (accepts --own-keys, --verbose)
+  ./trunomy run       boot trunomy.img in QEMU
+  ./trunomy check     what this machine is missing (tools, toolchain, keys, QEMU)
+  ./trunomy test      unit tests on the host
+  ./trunomy verify    prove the build is reproducible (two clean clones, same hash)
+EOF_USAGE
+}
+
+cmd="${1:-help}"; [ $# -gt 0 ] && shift
+case "$cmd" in
+    up)     exec ./build_os.sh --run "$@" ;;
+    build)  exec ./build_os.sh "$@" ;;
+    run)    exec ./run_os.sh "$@" ;;
+    check)  exec ./scripts/doctor.sh "$@" ;;
+    test)   exec ./scripts/ci.sh host "$@" ;;
+    verify) exec ./scripts/repro-check.sh "$@" ;;
+    help|-h|--help) usage ;;
+    *) echo "unknown command: $cmd" >&2; usage >&2; exit 2 ;;
+esac

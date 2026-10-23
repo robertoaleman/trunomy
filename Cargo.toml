@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[workspace]
+members = [
+    "abi",
+    "boot",
+    "bootcore",
+    "kernel",
+    "userland/shell",
+    "userland/libtrunomy"
+]
+resolver = "2"
+
+[profile.release]
+opt-level = "z"       # Optimiza el tamaño del binario al máximo para mantenerlo mínimo
+lto = true            # Habilita Link-Time Optimization para eliminar código muerto
+panic = "abort"       # En Zero Trust, si hay un pánico abortamos inmediatamente el hilo
+

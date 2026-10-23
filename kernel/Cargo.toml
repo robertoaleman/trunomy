@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[package]
+name = "trunomy-kernel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+trunomy-abi = { path = "../abi" }
+spin = "0.9.8"
+linked_list_allocator = "0.10.5"
+trunomy-bootcore = { path = "../bootcore" }
+
+[dev-dependencies]
+ed25519-dalek = { version = "2", features = ["std"] }

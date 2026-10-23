@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[build]
+# Indica a Rust que compile un binario UEFI puro para x86_64
+target = "x86_64-unknown-uefi"
+
+[target.x86_64-unknown-uefi]
+# Opciones del enlazador para asegurar que el formato sea un ejecutable EFI válido
+rustflags = ["-C", "link-args=/subsystem:efi_application"]

@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+# Toolchain fijado: reproducibilidad (scripts/pin-toolchain.sh). Cambiarlo es una decision explicita:
+# se hace con el script, se corre ./scripts/ci.sh all y se commitea junto con lo que cambie.
+[toolchain]
+channel = "1.98.1"
+profile = "minimal"
+targets = ["x86_64-unknown-none", "x86_64-unknown-uefi"]
