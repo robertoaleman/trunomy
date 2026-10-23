@@ -33,14 +33,26 @@ The project does not claim perfect security. It aims to make privilege escalatio
 
 ## Project status
 
-**Initial research prototype; it is not ready for production and has not been independently audited. The current focus is to demonstrate that the proposed design serves as an alternative for achieving true isolation for AI agents and other processes by controlling their capabilities at the kernel level..**
+**Experimental research prototype (v0.1.0). Not for production, not independently audited, QEMU only.** Do not use Trunomy to protect real data.
 
-The current implementation contains a UEFI bootloader, a bare-metal Rust kernel, userland components, an experimental shell, and early IPC/capability concepts. The security model and capability-book design are being developed alongside the implementation.
+Trunomy's goal is to show that isolating AI agents and other processes with kernel-enforced capabilities is a viable alternative to stacking sandboxes on top of a general-purpose OS.
 
-Do not use Trunomy to protect real or production data.
+**What exists today**
 
-Trunomy is a direction, not a finished product: it is meant to show an alternative way of building systems for sensitive data, not to be a ready-to-use general-purpose system. See [Scope](docs/scope.md).
+- **Boot integrity:** Ed25519-signed kernel and shell (separate keys), anti-rollback through a UEFI NVRAM counter, and reproducible builds (`./trunomy verify`).
+- **Capabilities owned by the kernel:** opaque handles, monotonic delegation, cascading revocation, per-subject quotas, tenant checks and a bounded audit log.
+- **Isolation:** per-process address spaces, W^X/NX, guard pages, zero-on-free, validated copies of user memory and fault containment.
+- **Operations:** `tenant panic` cuts off a tenant, IPC is scoped to a tenant, and a minimal virtio-net datagram protocol has per-port ownership.
+- **Evidence:** 50 documented invariants, 465 host tests and six end-to-end QEMU scripts.
 
+**What it is not (yet)**
+
+- Not run on real hardware; no IOMMU/DMA protection.
+- No peer authentication on the network, no TCP/IP, no filesystem or persistence.
+- No KASLR and no mitigations against speculative-execution side channels; single CPU.
+- Not formally verified. Some drivers (virtio-net) still run inside the kernel; keeping the kernel small is a design goal.
+
+Known limitations are listed in the [release notes](docs/release-notes-v0.1.0.md#known-limitations). Trunomy is a direction, not a finished product: see [Scope](docs/scope.md).
 ## Architecture
 
 ```text
