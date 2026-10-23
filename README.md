@@ -166,9 +166,8 @@ Avoid treating comments, naming, or hidden identifiers as security controls. Sec
 Copyright (C) 2026 Roberto C. Aleman F.
 ## Blockchain Integrity Verification
 
-The content of this repository and its release files are **indubitablemente and cryptographically verified on the Bitcoin blockchain** using the **OpenTimestamps** protocol.
-
-The existence and sole authorship of this software are mathematically proven, having been permanently anchored under the following transaction and confirmed blocks of the Bitcoin mainnet:
+The content of this repository and its release files are **verified on the Bitcoin blockchain** using the **OpenTimestamps** protocol.
+The having been permanently anchored under the following transaction and confirmed blocks of the Bitcoin mainnet:
 
 * **Bitcoin Transaction ID (TXID):** `c0960baac337cb6fe8ee650418bfd41ddd8f08df821d07a526be48d908729066`
 * **Backup Bitcoin Blocks:** 972749, 972686, 972728
