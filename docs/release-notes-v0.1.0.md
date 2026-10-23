@@ -1,4 +1,4 @@
-# Trunomy OS v0.1.0 — release notes
+# Trunomy OS v0.1.0, release notes
 
 First tagged release of the research prototype: a UEFI bootloader, an `x86_64` Rust capability microkernel, an experimental Ring 3 shell and a reproducible demonstration that runs in QEMU.
 
@@ -84,8 +84,8 @@ KASLR, real-hardware boot, an authenticated network/server responder, and an aud
 ## Upgrading and building
 
 ```bash
-git clone https://github.com/robertoaleman/trunomy-experimental.git
-cd trunomy-experimental
+git clone https://github.com/robertoaleman/trunomy.git
+cd trunomy
 ./trunomy check
 ./trunomy up            # offers to generate your own keys on a fresh clone
 ```
