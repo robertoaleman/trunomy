@@ -184,9 +184,7 @@ if you would like to make a suggestion, please post it in the issues section or 
 <p align="center">
   <b>Author : Roberto C. Alemán F., Zulia, Venezuela.</b><br/><img src="https://flagcdn.com/ve.svg" alt="Bandera de Venezuela" width="32">
   </br>
-  
 <p align="center">
   <a href="https://trunomy.com" title="Official website of trunomy os">Website</a> </br>
-   <b>License: GNU Affero General Public License (AGPL) </b></br>
-   <b>Current version available: v0.1.0</b></br>
+   <b>License: GNU Affero General Public License (AGPL-3.0-only) </b></br>
 </p>
