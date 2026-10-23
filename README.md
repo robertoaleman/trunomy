@@ -3,7 +3,7 @@
   <b>Author : Roberto C. Alemán F.</b><br/><b>Zulia, Venezuela</b><br/><img src="https://flagcdn.com/ve.svg" alt="Bandera de Venezuela" width="48">
 <p align="center">
   <a href="https://trunomy.com">Website</a><br/><br/>
-   <b>License: GNU Affero General Public License (AGPL) </b></br>
+   <b>License: GNU Affero General Public License (AGPL-3.0-only) </b></br>
    <b>Current version available: v0.1.0</b></br>
 </p>
 <p align="center">
@@ -163,7 +163,7 @@ Avoid treating comments, naming, or hidden identifiers as security controls. Sec
 - **Code** (The kernel and its security-critical components, bootloader, userland and scripts): [GNU AGPL-3.0-only](LICENSE).
 - **Documentation** (`docs/` and this README): [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). You may share and adapt it with attribution, under the same license.
 - **The Trunomy name and logo are not covered by these licenses.**
-Copyright (C) 2026 Roberto C. Aleman F.
+Copyright (C) 2026 Roberto C. Alemán F.
 ## Blockchain Integrity Verification
 
 The content of this repository and its release files are **verified on the Bitcoin blockchain** using the **OpenTimestamps** protocol.
