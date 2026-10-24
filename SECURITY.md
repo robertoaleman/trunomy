@@ -38,7 +38,7 @@ This is a one-person project, so these are goals, not guarantees:
 - an assessment (accepted, known limitation, or not reproducible) within 30 days;
 - for accepted reports, a fix on `main` with a regression test and a mention in the release notes, crediting you unless you prefer otherwise.
 
-Please allow a reasonable time to fix before disclosing details publicly. Good-faith research that follows this policy will not be met with any legal action.
+Please allow a reasonable time to fix before disclosing details publicly. 
 
 ## Scope
 
