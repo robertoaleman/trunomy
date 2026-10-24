@@ -30,7 +30,7 @@ Its central security thesis is:
 
 The project does not claim perfect security. It aims to make privilege escalation and useful lateral movement sufficiently expensive in a hostile environment that an attacker is discouraged from continuing.
 
-## Trunomy OS does not rely on trusting the intentions of an agent. Instead, it explores how to build a system that limits an agent's authority—ensuring that such authority is explicit, constrained, and enforced by the kernel, even when the process requesting an operation is hostile.
+## Trunomy OS does not rely on trusting the intentions of an agent. Instead, it explores how to build a system that limits an agent's authority ensuring that such authority is explicit, constrained, and enforced by the kernel, even when the process requesting an operation is hostile.
 
 
 ## Project status
