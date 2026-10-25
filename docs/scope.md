@@ -22,7 +22,7 @@ The project does not claim perfect security. It claims that a design built on th
 - A research prototype: a UEFI bootloader, an `x86_64` Rust kernel, a shell, and a reproducible demonstration that runs in QEMU.
 - A set of **invariants with traceable evidence**: which test, which QEMU script, and what is still unproven.
 - A **starting point to build on**, the way a distribution builds on a kernel: Trunomy supplies the kernel and its guarantees; others may assemble what they need on top.
-- A record of design decisions, including the ones deliberately postponed (for example [the remote-server design](design-remote-server.md)).
+- A record of design decisions.
 
 ## What it is not
 
