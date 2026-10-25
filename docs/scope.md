@@ -1,6 +1,6 @@
 # Scope: a direction, not a product
 
-Trunomy OS is not trying to be the operating system you install tomorrow. It is an argument, written as working code, about **which way operating systems for sensitive data could go**, and a reference you can read, run, and attack to see whether the argument holds.
+Trunomy OS is not trying to be the operating system you install tomorrow. It is an argument, written as working code, about **which way operating systems for sensitive data could go**, and a reference you can read, run, and attack to see whether the argument holds, At least for now and until there is a stable major version that has been tested on actual physical hardware rather than just in QEMU (which would imply readiness for production use) the project remains in development. When that point is reached, it will be announced; for the time being, the project is focused on how the proposed authority model can serve as an alternative for the era of agentic AI.
 
 If you arrive expecting a ready-to-use system, this page is here to save you time and to explain why that is not the goal.
 
