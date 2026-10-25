@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[package]
+name = "trunomy-bootcore"
+version = "0.1.0"
+edition = "2021"
+description = "Verificacion de firma y validacion de segmentos ELF del arranque (probable en el host)"
+
+[features]
+default = []
+# Planificacion y carga de ELF (solo la necesita el bootloader).
+elf = ["dep:xmas-elf"]
+
+[dependencies]
+ed25519-dalek = { version = "2", default-features = false, features = ["alloc", "zeroize"] }
+xmas-elf = { version = "0.10", optional = true }
+
+[dev-dependencies]
+ed25519-dalek = { version = "2", features = ["std"] }

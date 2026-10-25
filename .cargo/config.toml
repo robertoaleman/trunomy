@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[target.x86_64-unknown-none]
+rustflags = [
+    "-C", "target-feature=-sse,-sse2,-avx,-avx2",
+]
+
+[target.x86_64-unknown-uefi]
+# El .efi debe depender solo del codigo. lld-link, con /DEBUG (que rustc pasa siempre), escribe en la
+# cabecera PE y en el directorio de depuracion fechas e identificadores que cambian en cada enlace:
+#   /Brepro      -> la fecha pasa a ser un hash del contenido en vez de la hora del build
+#   /debug:none  -> sin directorio CodeView/PDB (el bootloader UEFI no usa simbolos de depuracion)
+# Verificado con lld-link: solo /Brepro deja 30 bytes distintos entre dos enlaces; con los dos, 0.
+rustflags = ["-C", "link-arg=/Brepro", "-C", "link-arg=/debug:none"]

@@ -1,0 +1,55 @@
+# Build artifacts
+/target/
+**/target/
+*.bin
+*.elf
+*.efi
+*.img
+*.iso
+*.d
+*.o
+*.a
+*.so
+*.dll
+*.pdb
+*.sym
+*.map
+*.lst
+
+# OS build/generated files
+/build/
+/dist/
+/out/
+/generated/
+
+# Tooling and editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+*.log
+*.tmp
+/tmp/
+
+# Cargo lock can stay if you want reproducibility; keep it if required for your workflow.
+# If you want to ignore it for a research repo, uncomment the next line.
+# Cargo.lock
+
+# Local environment files
+.env
+.env.*
+
+# OS runtime artifacts that are usually generated locally
+trunomy.img
+bootloader.efi
+kernel_x86_64.elf
+shell.bin
+
+.keys/
+
+# Python (scripts/*.py)
+__pycache__/
+*.pyc

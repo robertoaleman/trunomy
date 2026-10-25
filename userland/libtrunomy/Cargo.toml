@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[package]
+name = "libtrunomy"
+version = "0.1.0"
+edition = "2021"
+authors = ["Trunomy OS Core Team"]
+
+[dependencies]
+trunomy-abi = { path = "../../abi" }
+serde = { version = "1.0.197", default-features = false, features = ["derive", "alloc"] }
+# CORRECCIÓN: Quitamos features = ["alloc"] ya que ciborium maneja alloc nativamente con default-features = false
+ciborium = { version = "0.2.2", default-features = false }

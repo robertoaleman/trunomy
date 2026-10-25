@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# Trunomy OS - capability-based microkernel for isolating AI agents
+# Copyright (C) 2026 Roberto C. Aleman F.
+# https://github.com/robertoaleman/trunomy
+
+[package]
+name = "trunomy-coreutils"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Enlazamos con el SDK oficial para usar el motor de pipes estructurados
+libtrunomy = { path = "../libtrunomy" }
+serde = { version = "1.0.197", default-features = false, features = ["derive", "alloc"] }
